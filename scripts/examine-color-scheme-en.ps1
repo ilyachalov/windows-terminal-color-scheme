@@ -108,7 +108,7 @@ function get-relative-luminance($RGB) {
     #   Вспомогательная функция (получает число, возвращает число)
     function get-linear($param) {
         $val = $param
-        if ($val -lt 0.03928) {
+        if ($val -le 0.03928) {
             $val = $val / 12.92
         } else {
             $val = [Math]::Pow((($val + 0.055) / 1.055), 2.4)
