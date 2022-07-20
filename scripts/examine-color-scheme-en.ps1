@@ -7,17 +7,21 @@
 #
 #   Цветовая схема задается в отдельном файле в формате JSON. Имя этого
 #   файла следует передать скрипту в параметре. Пример запуска скрипта:
-#   > .\examine-color-scheme-en campbell.jsonc
+#   > .\examine-color-scheme-en "campbell.jsonc"
 #
 #   Формат описания цветовой схемы в файле JSON описан тут:
 #   https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes
 #
 
 param ($file = $(throw "Error: set the name of the file with the color scheme in the parameter!"))
-""
+if (-not (test-path $file)) {
+    "`nThe '$file' file does not exist! The script interrupts the work.`n"
+    return
+}
 
 $colorScheme = get-content $file | convertfrom-json
 
+""
 if ($null -eq $colorScheme.name) {
     "Color scheme: <the name is not specified> (missing field 'name')"
 } else {
