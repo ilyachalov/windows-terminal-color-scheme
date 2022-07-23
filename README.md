@@ -1,6 +1,8 @@
 # windows-terminal-color-scheme
 Исследование цветов и цветовых схем в программах-«эмуляторах терминала» в операционной системе «Windows 10».
 
+Кодировка текстовых файлов со скриптами: UTF-8 (без BOM).
+
 ## .sh
 
 Файл «[colours.sh](https://github.com/ilyachalov/windows-terminal-color-scheme/blob/main/scripts/colours.sh)» — это скрипт для запуска в программе-оболочке «bash». Этот скрипт тестировался в программе-оболочке «Git Bash», которую я получил при установке на свой компьютер программы «Git for Windows» («Git Bash» содержится в дистрибутиве «Git for Windows»).
